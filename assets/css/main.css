@@ -1,0 +1,644 @@
+/**
+* Template Name: Moderna
+* Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #555555; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #1e4356; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #68a4c4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-hover-color: #68a4c4; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #555555; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #68a4c4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f4f8fb;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #1e4356;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #284e62;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 32px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+/* Global Header on Scroll
+------------------------------*/
+.scrolled .header {
+  --background-color: #1e4356;
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/* Ukuran default untuk Desktop */
+.about-section h1 {
+  font-size: 22px; 
+  font-weight: bold; 
+  color: #111111;
+}
+
+.about-section p {
+  font-size: 15px;
+  max-width: 800px;
+  margin: 10px auto;
+  color: #272727;
+}
+
+/* Tablet (1024px ke bawah) */
+@media (max-width: 1024px) {
+  .about-section h1 {
+    font-size: 20px !important;
+  }
+
+  .about-section p {
+    font-size: 16px !important;
+  }
+
+  .vision-mission .box h3 {
+    font-size: 20px !important;
+  }
+
+  .vision-mission .box p {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobile (768px ke bawah) */
+@media (max-width: 768px) {
+  .about-section h1 {
+    font-size: 18px !important;
+  }
+
+  .about-section p {
+    font-size: 14px !important;
+  }
+
+  .vision-mission .box h3 {
+    font-size: 18px !important;
+  }
+
+  .vision-mission .box p {
+    font-size: 14px !important;
+  }
+}
+
+/* HP kecil (480px ke bawah) */
+@media (max-width: 480px) {
+  .about-section h1 {
+    font-size: 18px !important;
+  }
+
+  .about-section p {
+    font-size: 14px !important;
+  }
+
+  .vision-mission .box h3 {
+    font-size: 18px !important;
+  }
+
+  .vision-mission .box p {
+    font-size: 12px !important;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+  background-image: url("assets/img/hero-bg1.jpg"); /* Gambar sebagai background */
+  background-size: cover; /* Menyesuaikan layar tanpa terpotong */
+  background-position: center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Jangan ulang gambar */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.hero-container {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-container img {
+  width: 100%;
+  height: auto; /* Biarkan tinggi menyesuaikan */
+  max-height: 300px; /* Batasi tinggi gambar */
+  object-fit: contain; /* Hindari pemotongan gambar di mobile */
+}
+
+/* Untuk tampilan desktop, tetap gunakan cover agar gambar memenuhi layar */
+@media (min-width: 1024px) {
+  .hero-container img {
+      height: 100vh; 
+      object-fit: cover; /* Tetap memastikan gambar terpotong dan menyesuaikan layar */
+      max-height: 100vh; /* Membatasi tinggi gambar agar tidak terlalu besar */
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+/* Ukuran font default (desktop) */
+.content h3 {
+  font-size: 22px; /* Ukuran font besar untuk desktop */
+  font-weight: bold;
+}
+
+
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start; /* Kembali ke flex-start untuk memposisikan teks dengan benar */
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.check-list i {
+  color: green;
+  font-size: 16px;
+  margin-right: 10px;
+  flex-shrink: 0; /* Mencegah ikon mengecil */
+  margin-top: 5px; /* Sedikit naik agar sejajar dengan teks strong */
+}
+
+.check-list strong {
+  display: inline-block;
+}
+
+
+
+
+.about {
+  padding: 30px 0; /* Hindari ruang kosong terlalu besar */
+}
+
+.about .row {
+  margin: 0;
+}
+
+/* Untuk tampilan mobile */
+@media (max-width: 768px) {
+  .content h3 {
+    font-size: 18px; /* Perkecil ukuran h3 di mobile */
+  }
+
+  .content ul li {
+    font-size: 14px; /* Perkecil ukuran teks di mobile */
+    line-height: 1.4; /* Jarak antar baris lebih padat */
+  }
+}
+
+/* Untuk mobile, pastikan tidak ada margin berlebih */
+@media (max-width: 768px) {
+  .about .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about .col-lg-6 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+/* Gaya untuk judul */
+h2.text-center {
+  padding-top: 20px; /* Tambahkan padding atas */
+  font-size: 24px; /* Ukuran font sedikit lebih besar */
+  font-weight: bold;
+  color: #111111;
+  text-transform: uppercase; /* Opsional: Agar huruf besar semua */
+  letter-spacing: 1px; /* Beri sedikit jarak antar huruf */
+}
+
+/* Media query untuk ukuran mobile */
+@media (max-width: 768px) {
+  h2.text-center {
+    font-size: 20px; /* Perkecil ukuran font */
+    text-align: center;
+    margin-top: -5%;
+  }
+}
+
+.container.my-3 {
+  margin-top: 20px !important;
+  padding-top: 0 !important;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+h2.text-center {
+  font-size: 19px !important; /* Ukuran besar */
+  font-weight: bold !important; /* Teks tebal */
+  text-align: center !important; /* Pusatkan teks */
+  color: #111 !important; /* Warna lebih gelap */
+  margin-bottom: 10px !important; /* Jarak ke bawah */
+  text-transform: none !important; /* Biarkan sesuai input */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  h2.text-center {
+    font-size: 16px !important; /* Ukuran lebih kecil di layar mobile */
+  }
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Berikan sedikit jarak antar tabel */
+  flex-wrap: nowrap; /* Pastikan tetap sejajar di semua ukuran layar */
+  overflow-x: auto; /* Jika layar kecil, bisa di-scroll */
+  width: 100%;
+}
+
+.tabel-materi {
+  width: 50%; /* Tabel sejajar horizontal */
+  min-width: 300px; /* Pastikan tabel tidak terlalu kecil */
+  text-align: left;
+}
+
+/* RESPONSIF untuk Mobile */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto; /* Izinkan scroll jika tabel terlalu lebar */
+    flex-wrap: nowrap; /* Pastikan tetap sejajar */
+    justify-content: flex-start; /* Mulai dari kiri agar tetap terlihat */
+    gap: 5px; /* Jarak antar tabel lebih kecil di layar kecil */
+    margin-bottom: 5%;
+  }
+
+  .tabel-materi {
+    width: 45%; /* Pastikan tabel tetap sejajar */
+    font-size: 11px; /* Perkecil teks agar tetap terbaca */
+  }
+
+  .tabel-materi th,
+  .tabel-materi td {
+    padding: 5px; /* Kurangi padding agar tabel lebih ramping */
+  }
+}
+
+  
+/*--------------------------------------------------------------
+# Chefs Section
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center; /* Pusatkan teks */
+}
+
+.section-title h3 {
+  font-size: 21px; /* Ukuran font */
+  font-weight: bold; /* Membuat teks lebih tebal */
+  color: #131212; /* Warna teks */
+  margin-top: 28px;
+  margin-bottom: 2%; /* Beri jarak ke bawah */
+}
+
+.testimoni-section p {
+  font-size: 12px; /* Ukuran teks agar mudah dibaca */
+  line-height: 1.6; /* Spasi antar baris agar lebih nyaman */
+  text-align: justify; /* Rata kanan-kiri agar lebih rapi */
+  color: #333; /* Warna teks sedikit lebih gelap agar lebih jelas */
+  padding: 10px; /* Beri sedikit ruang di sekitar teks */
+  border-radius: 8px; /* Agar sudutnya lebih halus */
+  background: #f8f9fa; /* Warna latar belakang agar kontras */
+  margin-top: -4%;
+}
+
+@media (max-width: 768px) {
+  .testimoni-section p {
+    font-size: 12px; /* Ukuran lebih kecil agar tetap proporsional */
+    padding: 8px; /* Kurangi padding agar tidak terlalu lebar */
+    margin-right: 7%;
+    margin-top: -4%;
+  }
+}
+
+.testimoni-carousel {
+  width: 100%;
+  overflow: hidden; /* Cegah gambar terpotong */
+  display: flex;
+  flex-wrap: wrap; /* Agar foto tetap rapi di berbagai ukuran layar */
+  justify-content: center; /* Pusatkan foto */
+  gap: 5px; /* Beri jarak antar foto */
+  padding: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Biarkan Swiper mengatur width */
+}
+
+
+/* Perbaiki ukuran team-member agar lebih pas */
+.team-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 320px; /* Batasi lebar */
+  max-width: 120%;
+  margin: 0 auto; /* Pusatkan elemen */
+}
+
+/* Jaga agar gambar tetap proporsional */
+.team-member .member-img img {
+  width: 120%; /* Pastikan gambar mengisi div */
+  height: 370px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto; /* Pusatkan gambar */
+  margin-bottom: 5%;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .testimoni-carousel {
+    flex-direction: column; /* Ubah menjadi satu kolom di mobile */
+    align-items: center;
+    margin-bottom: 2%;
+  }
+
+  .team-member {
+    width: 110%; /* Buat lebih kecil agar tidak terlalu besar di mobile */
+    margin-bottom: 2%;
+  }
+}
+
+
+.cta-section {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  position: relative; /* Tambahkan ini */
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #25D366; /* Warna hijau khas WhatsApp */
+  width: 40%;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+  color: white;
+}
+
+.cta-button i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.arrows {
+  margin-top: 10px;
+  font-size: 20px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  animation: bounce 1.25s infinite;
+}
+
+.cta-text {
+  text-align: center !important;
+  width: 100% !important;
+  background: none !important;
+  background-color: transparent !important;
+  padding: 0 !important; /* Menghilangkan padding jika ada */
+  margin: 0 !important; /* Menghilangkan margin jika ada */
+  display: block; /* Pastikan tampil sebagai elemen blok */
+  font-size: 22%;
+}
+
+
+
+/* Animasi panah naik turun */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  .cta-text {
+    text-align: center !important;
+    width: 100% !important;
+    background: none !important;
+    background-color: transparent !important;
+    padding: 0 !important; /* Menghilangkan padding jika ada */
+    margin: 0 !important; /* Menghilangkan margin jika ada */
+    display: block; /* Pastikan tampil sebagai elemen blok */
+    }
+    
+  }
+  
+  
+  .cta-button {
+    width: 90%; /* Tombol memenuhi hampir seluruh layar */
+    font-size: 18px; /* Sedikit lebih kecil agar sesuai dengan layar kecil */
+  }
+
+.map-container {
+  width: 100%; /* Lebar penuh sesuai parent */
+  max-width: 800px; /* Batasi lebar maksimal agar tidak terlalu besar */
+  height: 400px; /* Atur tinggi peta */
+  margin: 0 auto; /* Pusatkan elemen */
+  border-radius: 10px; /* Opsional: Membuat sudut melengkung */
+  overflow: hidden; /* Mencegah peta meluber */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0; /* Menghilangkan border pada iframe */
+}
+
+
