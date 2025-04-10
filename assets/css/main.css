@@ -180,6 +180,10 @@ h6 {
     font-size: 17px !important;
   }
 
+  .vision-mission .box {
+    margin-bottom: 5% !important;
+  }
+
   .vision-mission .box h3 {
     font-size: 20px !important;
   }
@@ -199,6 +203,10 @@ h6 {
     font-size: 15px !important;
   }
 
+  .vision-mission .box {
+    margin-bottom: 5% !important;
+  }
+
   .vision-mission .box h3 {
     font-size: 18px !important;
   }
@@ -214,8 +222,12 @@ h6 {
     font-size: 18px !important;
   }
 
-  .about-section p {
+  .abou t-section p {
     font-size: 15px !important;
+  }
+
+  .vision-mission .box {
+    margin-bottom: 5% !important;
   }
 
   .vision-mission .box h3 {
